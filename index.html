@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9097QXWNCZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-9097QXWNCZ');
+  </script>
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="A study on how humans use nonverbal visual cues to read intentions, with a dataset and computational model tested on the iCub humanoid robot.">
+  <meta property="og:title" content="Action Anticipation: Reading the Intentions of Humans and Robots"/>
+  <meta property="og:description" content="We present a dataset and a computational model for nonverbal intention reading, validated with human studies and tested on the iCub humanoid robot."/>
+  <meta property="og:url" content="https://nunoduarte.github.io/pages.ral18/"/>
+  <meta property="og:image" content="static/images/icub_interaction_banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="Action Anticipation: Reading the Intentions of Humans and Robots">
+  <meta name="twitter:description" content="Our research explores how body motion and gaze inform intention reading, with a model tested on iCub in real human-robot interaction scenarios.">
+  <meta name="twitter:image" content="static/images/icub_interaction_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Action Anticipation</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+  >
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://nunoduarte.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+     <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+	  <a class="navbar-item" href="https://nunoduarte.github.io">
+            Action Alignment
+          </a>
+          <a class="navbar-item" href="https://nunoduarte.github.io">
+            Gaze Dialogue
+          </a>
+        </div>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns">
+          <div class="column is-three-fifths is-flex is-flex-wrap-wrap">
+                <img src="static/images/logo_tecnico.png" style="height: 100px;" alt="MY ALT TEXT"/>
+                <img src="static/images/logo_isr.png" style="height: 100px;" alt="MY ALT TEXT"/>
+          </div>
+          <div class="column is-flex is-flex-direction-row-reverse is-flex-wrap-wrap">
+            <img src="static/images/logo_ral.png" style="height: 100px;" alt="MY ALT TEXT"/>
+              </div>
+        </div>
+        <div class="columns is-centered">
+
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Action Anticipation: Reading the Intentions of Humans and Robots</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://nunoduarte.github.io" target="_blank">Nuno Ferreira Duarte</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.sg/citations?user=hSUzJK0AAAAJ&hl=en" target="_blank">Mirko Rakovi&cacute;</a>,<sup>2</sup></span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=ngsCvOIAAAAJ&hl=en" target="_blank">Jovica Tasevski </a><sup>2</sup>,</span>
+		    <span class="author-block">
+                      <a href="https://www.morenococo.org" target="_blank">Moreno Coco</a><sup>3</sup>,</span>	
+                      <span class="author-block">
+                        <a href="https://people.epfl.ch/aude.billard" target="_blank">Aude Billard</a><sup>4</sup>,</span>  
+		        <span class="author-block">
+                        <a href="https://isr.tecnico.ulisboa.pt/author/josealbertorosado/" target="_blank">José Santos-Victor</a><sup>1</sup> 
+	      </span>
+		</div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>ISR-Lisboa <sup>2</sup>University of Novi Sad <sup>3</sup>University of Edinburgh <sup>4</sup>EPFL<br>Robotics and Automation Letter 2018</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://vislab.isr.tecnico.ulisboa.pt/wp-content/uploads/2018/08/nduarte-ral2018.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- IEEE link -->
+                    <span class="link-block">
+                      <a href="https://ieeexplore.ieee.org/document/8423498" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>IEEE</span>
+                    </a>
+                  </span>
+
+                  <!-- Video link -->
+                  <span class="link-block">
+                    <a href="https://www.youtube.com/watch?v=HirRPgZGgFA" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>YouTube</span>
+                  </a>
+                </span>
+
+                <!-- Github Link -->
+                <span class="link-block">
+                  <a href="https://github.com/NunoDuarte/bioGMR_iCub" target="_blank"
+                  class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video 
+        id="tree" 
+        playsinline 
+        webkit-playsinline 
+        muted 
+        loop 
+        autoplay="autoplay"
+        preload="auto"
+        height="100%"
+        <source src="https://res.cloudinary.com/dcj7wjo3u/video/upload/q_auto,f_auto/v1749309820/y0ud2drokj02yayw9ho4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h2 class="subtitle has-text-centered">
+Our work stems the importance of non-verbal cues during a HHI, and the benefit of affording robots with the two-fold
+capacity: (i) interpreting those cues to read the action intentions of their human counterparts and (ii) to act in a way that is legible
+and predictable to humans.
+     </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+Humans have the fascinating capacity of processing nonverbal visual cues to understand and anticipate the actions of other humans. This “intention reading” ability is underpinned by shared motor repertoires and action models, which we use to interpret the intentions of others as if they were our own. We investigate how different cues contribute to the legibility of human actions during interpersonal interactions. Our first contribution is a publicly available dataset with recordings of human body motion and eye gaze, acquired in an experimental scenario with an actor interacting with three subjects. From these data, we conducted a human study to analyze the importance of different nonverbal cues for action perception. As our second contribution, we used motion/gaze recordings to build a computational model describing the interaction between two persons. As a third contribution, we embedded this model in the controller of an iCub humanoid robot and conducted a second human study, in the same scenario with the robot as an actor, to validate the model's “intention reading” capability. Our results show that it is possible to model (nonverbal) signals exchanged by humans during interaction, and how to incorporate such a mechanism in robotic systems with the twin goal of being able to “read” human action intentionsand acting in a way that is legible by humans.            
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel1.jpg" alt="Centered Image" style="display: block; margin: 0 auto;"/>
+        <h2 class="subtitle has-text-centered">
+          Cover page.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Human and Humanoid performing the same identical action with human-like behavior.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+         The different gaze behaviors observed during giving actions.
+       </h2>
+     </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/HirRPgZGgFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-5">Human-like Gaze Behavior of iCub</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video 
+            id="video1" 
+            playsinline 
+            webkit-playsinline 
+            muted 
+            loop 
+            autoplay="autoplay"
+            preload="auto"
+            height="100%"
+            <source src="https://res.cloudinary.com/dcj7wjo3u/video/upload/q_auto,f_auto/v1749309819/tzjntao9plmvtsyx7wsb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video 
+            id="video2" 
+            playsinline 
+            webkit-playsinline 
+            muted 
+            loop 
+            autoplay="autoplay"
+            preload="auto"
+            height="100%"
+            <source src="https://res.cloudinary.com/dcj7wjo3u/video/upload/q_auto,f_auto/v1749309819/om82yu6spx713uqra5u5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video 
+            id="video3" 
+            playsinline 
+            webkit-playsinline 
+            muted 
+            loop 
+            autoplay="autoplay"
+            preload="auto"
+            height="100%"
+            <source src="https://res.cloudinary.com/dcj7wjo3u/video/upload/q_auto,f_auto/v1749309818/pv3t6jh5pdxclhto1tyw.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="item item-video4">
+          <video 
+            id="video4" 
+            playsinline 
+            webkit-playsinline 
+            muted 
+            controls
+            loop 
+            autoplay="autoplay"
+            preload="auto"
+            height="100%"
+            <source src="https://res.cloudinary.com/dcj7wjo3u/video/upload/q_auto,f_auto/v1749309818/e6uuemcezo7jw1gthrph.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="item item-video5">
+          <video 
+            id="video5" 
+            playsinline 
+            webkit-playsinline 
+            muted 
+            controls
+            loop
+            autoplay="autoplay"
+            preload="auto"
+            height="100%"
+            <source src="https://res.cloudinary.com/dcj7wjo3u/video/upload/q_auto,f_auto/v1749309818/r51gkrcutwqgxmfv1tuh.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@ARTICLE{8423498, 
+author={N. F. {Duarte} and M. {Raković} and J. {Tasevski} and M. I. {Coco} and A. {Billard} and J. {Santos-Victor}}, 
+title={Action Anticipation: Reading the Intentions of Humans and Robots}, 
+year={2018}, 
+volume={3}, 
+number={4}, 
+pages={4132-4139}, 
+keywords={control engineering;gaze tracking;human computer interaction;humanoid robots;robot vision;sensor fusion;visual perception;action anticipation;nonverbal visual cues;intention reading ability;shared motor repertoires;action models;human body motion;eye gaze;action perception;robot intentions;human intentions;nonverbal cues;motion recordings;gaze recordings;iCub humanoid robot controller;sensor fusion;Robot kinematics;Computational modeling;Robot sensing systems;Solid modeling;Tracking;Magnetic heads;Social human-robot interaction;humanoid robots;sensor fusion}, 
+doi={10.1109/LRA.2018.2861569}, 
+ISSN={2377-3766}, 
+month={Oct},}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was adapted from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which in turn was inspired by <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            I express my gratitude to the creators of the mentioned repos. Please visit their websites if you would like to use their work. This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
